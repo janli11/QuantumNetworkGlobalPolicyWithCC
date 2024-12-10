@@ -53,7 +53,7 @@ The repository is split into three main parts: the source code (src), data gener
 
 #### Quantum Network Simulator and Markov Decision process environment 
 
-The source code is divided into two parts. The first part, 'environments', contains all of the necessary code to construct our gynamsium (https://gymnasium.farama.org/) enviroment. The second part 'train_and_sim' contains all of the necessary code to train our agent on the gymnasium environment and to simulate the trained agent as well as some fixed policies. For the training of the agent, we are using 'PPO' from Stable-Baselines3 (https://stable-baselines3.readthedocs.io/en/master/)
+The 'qnetcc' package is divided into two parts. The first part, 'environments', contains all of the necessary code to construct our gynamsium (https://gymnasium.farama.org/) enviroment. The second part 'train_and_sim' contains all of the necessary code to train our agent on the gymnasium environment and to simulate the trained agent as well as some fixed policies. For the training of the agent, we are using 'PPO' from Stable-Baselines3 (https://stable-baselines3.readthedocs.io/en/master/)
 
 The `environments` package is divided into several modules as follows:
 - ActionSpace.py
@@ -61,9 +61,14 @@ The `environments` package is divided into several modules as follows:
 - MDPEnv.py
 - MDPRootClass.py
 - ObsSpace.py
-- QNSimulator (which is a package itself)
+- QNSimulator (subdirectory)
 
 The MDPEnv.py module is the module where the MDP environemnt is defined on which the agent is trained. It is a child class of the MDPRootClass.py, ActionSpace.py and ObsSpace.py modules. 
+The QNSimulator contains the modules: 
+- node.py
+- qubit.py
+- QuantumNetwork.py
+This directory provides a simulator for the quantum network which is used in the MDP environment. 
 
 The `TrainSim` package is divided into several modules as follows:
 - MDPTrainSim.py
@@ -112,14 +117,14 @@ Is used to launch the training and/or simulation of the RL agent. It takes the f
 
 ### Plotting
 
-The plots in the paper are made using the scripts in the plotting folder. Figure 4 of the paper is made with Figure4.py. The heatmaps of Figure 5 is made with Figure5.py. 
+The plots in the paper are made using the scripts in the plotting folder. The heatmaps of Figure 6 is made with Figure6.py. Figure 7 of the paper is made with Figure7.py.
 
 
 ## Data used in paper [Insert ArXiv link here]
 
 The Trained models and simulation data used to create the models are stored in a separate github repository: https://github.com/janli11/QuantumNetworkGlobalPolicyWithCCData
 
-To recreate Figure 4 and the heatmaps of Figure 5, please first download the data from the github repository. Then move it into a folder called data on the same level as the code from https://github.com/janli11/QuantumNetworkGlobalPolicyWithCC.git. Running the scripts Figure4.py and Figure5.py should reproduce the desired figures. 
+To recreate Figure 7 and the heatmaps of Figure 6, please first download the data from the github repository. Then move it into a folder called data on the same level as the code from https://github.com/janli11/QuantumNetworkGlobalPolicyWithCC.git. Running the scripts Figure6.py and Figure7.py should reproduce the desired figures. 
 
 
 
