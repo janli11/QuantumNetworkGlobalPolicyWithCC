@@ -98,7 +98,7 @@ The module 'PolicyComparison.py' is primairly intended for locally training the 
 
 To train the files on a cluster, please modify the slurm files to your specific needs. The corresponding slurm files will run the 'SwapAsapSimHpc.py' and the 'RLTrainSimHpc.py' modules.  
 
-In the shell script 'slumRLTrainSimHpc.sh', the last line 
+In the shell scripts 'slumRLTrain.sh' and 'slumRLSim.sh', the last line 
 
 '''
 python DataGen/RLTrainSimHpc.py -idx $SLURM_ARRAY_TASK_ID -N_idx $N_idx -train ... -train_more ... -train_steps ... -sim ... -sim_eps "..." -train_new_model ... -training_version_start ... -training_version_stop ...
