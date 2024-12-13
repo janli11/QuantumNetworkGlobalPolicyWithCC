@@ -120,9 +120,9 @@ Is used to launch the training and/or simulation of the RL agent. It takes the f
 The plots in the paper are made using the scripts in the plotting folder. The heatmaps of Figure 6 is made with Figure6.py. Figure 7 of the paper is made with Figure7.py.
 
 
-## Data used in paper [Insert ArXiv link here]
+## Data used in paper [https://arxiv.org/pdf/2412.06938]
 
-The Trained models and simulation data used to create the models are stored in a separate github repository: https://github.com/janli11/QuantumNetworkGlobalPolicyWithCCData
+The Trained models and simulation data used to create the figures are stored in a separate gitlab repository: https://gitlab.strw.leidenuniv.nl/janli/quantumnetworkglobalpolicywithccdata.git
 
 To recreate Figure 7 and the heatmaps of Figure 6, please first download the data from the github repository. Then move it into a folder called data on the same level as the code from https://github.com/janli11/QuantumNetworkGlobalPolicyWithCC.git. Running the scripts Figure6.py and Figure7.py should reproduce the desired figures. 
 
