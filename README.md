@@ -126,7 +126,9 @@ The Trained models and simulation data used to create the figures are stored in 
 
 To recreate Figure 7 and the heatmaps of Figure 6, please first download the data from the github repository. Then move it into a folder called data on the same level as the code from https://github.com/janli11/QuantumNetworkGlobalPolicyWithCC.git. Running the scripts Figure6.py and Figure7.py should reproduce the desired figures. 
 
+## The code for the inhomogeneous scenario can be found in a separate github repository
 
+https://github.com/janli11/QuantumNetworkGlobalPolicyWithCCInhom
 
 
 
