@@ -92,7 +92,7 @@ The module 'SwapAsapVanillaSim.py' contains functions for simulating the vanilla
 
 ### Data Generation
 
-The modules for training various RL models at different network parameters and simulating the RL as well as various swap-asap policies can be found in the 'DataGen' folder. 
+The modules for training various RL models at different network parameters and simulating the RL as well as various swap-asap policies can be found in the 'DataGen' folder. In the 'DataGen' folder, some files have copy with `Ind` in the filename. The difference between these two is that in the former, the random seeds for the simulations are fixed so that independent runs produce the same results, whereas in the latter this is not the case. 
 
 The module 'PolicyComparison.py' is primairly intended for locally training the RL agent and simulating it together with the swap-asap policies to compare them with each other. 
 
@@ -100,31 +100,28 @@ To train the files on a cluster, please modify the slurm files to your specific 
 
 In the shell scripts 'slumRLTrain.sh' and 'slumRLSim.sh', the last line 
 
-'''
+```
 python DataGen/RLTrainSimHpc.py -idx $SLURM_ARRAY_TASK_ID -N_idx $N_idx -train ... -train_more ... -train_steps ... -sim ... -sim_eps "..." -train_new_model ... -training_version_start ... -training_version_stop ...
-'''
+```
 
 Is used to launch the training and/or simulation of the RL agent. It takes the following arguments at 
 -train: 0 or 1; 0 to not train the model, 1 to train the model.  
 -train_more: 0 or 1; 0 to not train if a trained model already exists, 1 to continue training the model.  
--train_steps: str; string specifiying the number of steps to train, e.g. "1e5". Will be converted to a float in the RLTrainSimHPc.py module.
--sim: 0 or 1; 0 to not simulate the policy, 1 to simulate the policy and save the delivery times. 
--sim_eps: str; string specifiying the number of steps to simulate the RL policy, e.g. "1e5". Will be converted to a float in the RLTrainSimHPc.py module.
--train_new_model: 0 or 1; Whether to train a new version of the model if there currently already exists one
--train_version_start: int(positive); Trains a model at the actual labelled by a specific version indices. This is the start index. 
--train_version_stop: int(positive); Trains a model at the actual labelled by a specific version indices. This is the end index. 
+-train_steps: str; string specifiying the number of steps to train, e.g. "1e5". Will be converted to a float in the RLTrainSimHPc.py module.  
+-sim: 0 or 1; 0 to not simulate the policy, 1 to simulate the policy and save the delivery times.   
+-sim_eps: str; string specifiying the number of steps to simulate the RL policy, e.g. "1e5". Will be converted to a float in the RLTrainSimHPc.py module.  
+-train_new_model: 0 or 1; Whether to train a new version of the model if there currently already exists one.  
+-train_version_start: int(positive); Trains a model at the actual labelled by a specific version indices. This is the start index.   
+-train_version_stop: int(positive); Trains a model at the actual labelled by a specific version indices. This is the end index.   
 
 
 ### Plotting
 
-The plots in the paper are made using the scripts in the plotting folder. The heatmaps of Figure 6 is made with Figure6.py. Figure 7 of the paper is made with Figure7.py.
-
+The plotting scripts used to produce the plots of the paper can be found in the `plotting` folder. To recreate the figure of the paper, please generate the data or download it (see below) first. Then move it into a folder called data on the same level as the code from https://github.com/janli11/QuantumNetworkGlobalPolicyWithCC.git. Running the plotting script should then reproduce the desired figures. 
 
 ## Data used in paper [https://arxiv.org/abs/2412.06938]
 
 The Trained models and simulation data used to create the figures are stored in a separate gitlab repository: https://gitlab.strw.leidenuniv.nl/janli/quantumnetworkglobalpolicywithccdata.git
-
-To recreate Figure 7 and the heatmaps of Figure 6, please first download the data from the github repository. Then move it into a folder called data on the same level as the code from https://github.com/janli11/QuantumNetworkGlobalPolicyWithCC.git. Running the scripts Figure6.py and Figure7.py should reproduce the desired figures. 
 
 ## The code for the inhomogeneous scenario can be found in a separate github repository
 
