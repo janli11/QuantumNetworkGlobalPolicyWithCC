@@ -107,12 +107,13 @@ python DataGen/RLTrainSimHpc.py -idx $SLURM_ARRAY_TASK_ID -N_idx $N_idx -train .
 Is used to launch the training and/or simulation of the RL agent. It takes the following arguments at 
 -train: 0 or 1; 0 to not train the model, 1 to train the model.  
 -train_more: 0 or 1; 0 to not train if a trained model already exists, 1 to continue training the model.  
--train_steps: str; string specifiying the number of steps to train, e.g. "1e5". Will be converted to a float in the RLTrainSimHPc.py module.  
+-train_steps: str; string specifiying the number of steps to train, e.g. "1e5". It will be converted to a float in the RLTrainSimHPc.py module.  
 -sim: 0 or 1; 0 to not simulate the policy, 1 to simulate the policy and save the delivery times.   
--sim_eps: str; string specifiying the number of steps to simulate the RL policy, e.g. "1e5". Will be converted to a float in the RLTrainSimHPc.py module.  
+-sim_eps: str; string specifiying the number of steps to simulate the RL policy, e.g. "1e5". It will be converted to a float in the RLTrainSimHPc.py module.  
 -train_new_model: 0 or 1; Whether to train a new version of the model if there currently already exists one.  
--train_version_start: int(positive); Trains a model at the actual labelled by a specific version indices. This is the start index.   
--train_version_stop: int(positive); Trains a model at the actual labelled by a specific version indices. This is the end index.   
+With train_version_start and train_version_stop, we specify an interval of positive integers with stepsize 1. These integers set the random seed for the training. 
+-train_version_start: int(positive); This is the start index.   
+-train_version_stop: int(positive); This is the stop index.   
 
 
 ### Plotting
